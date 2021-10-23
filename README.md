@@ -11,3 +11,4 @@ gunicorn 20.1.0
 
 ### Авторы
 Зульфат
+![example workflow](https://github.com/Zulfat-Gadelshin/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
