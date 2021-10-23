@@ -1,7 +1,5 @@
-FROM python:3.8.5
-
-RUN workdir /code
-COPY requirements.txt .
-RUN pip install -r /code/requirements.txt
-COPY . /code
-CMD gunicorn api_yamdb.wsgi:application --bind 0.0.0.0:8000
+FROM python:3.8
+COPY ./ /app
+RUN pip install -r /app/requirements.txt
+WORKDIR /app/myprojec/
+CMD python manage.py runserver 0:5000
