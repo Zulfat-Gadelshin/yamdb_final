@@ -59,8 +59,7 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           stack_file_name: docker-compose.yaml
           script: |
-            sudo pwd
-            sudo ls -a
+            cd yamdb_final/
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/ya_mdb
             sudo docker-compose stop
             sudo docker-compose rm web
