@@ -59,7 +59,7 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           stack_file_name: docker-compose.yaml
           script: |
-            sudo docker pull <имя-пользователя>/<имя-репозитория>
+            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/ya_mdb
             sudo docker-compose stop
             sudo docker-compose rm web
             # Создаст файл для переменных окружения
