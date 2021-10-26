@@ -62,7 +62,7 @@ jobs:
             cd yamdb_final/
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/ya_mdb
             sudo docker-compose stop
-            sudo docker-compose rm web
+            yes | sudo docker-compose rm web
             # Создаст файл для переменных окружения
             sudo touch .env 
             # Наполнит файл переменными окружения из секретов GitHub
