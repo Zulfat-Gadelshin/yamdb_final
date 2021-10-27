@@ -24,6 +24,7 @@ jobs:
         python -m flake8
         pytest
         python manage.py test
+        python manage.py collectstatic
         
 
   build_and_push_to_docker_hub:
@@ -72,6 +73,7 @@ jobs:
             sudo echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
             sudo echo DB_HOST=${{ secrets.DB_HOST }} >> .env
             sudo echo DB_PORT=${{ secrets.DB_PORT }} >> .env
+            #python manage.py collectstatic
             sudo docker-compose up -d
           
   send_message:
